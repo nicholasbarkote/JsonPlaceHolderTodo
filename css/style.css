@@ -64,10 +64,19 @@ input[type=image]{
 .line{
     border: 2px solid var(--primary-light);
 }
-#complete{
-    background-color: rgba(229, 202, 202, 0.666);
-      
+.complete{
+    background-color: greenyellow;
     margin: 5px 0;
+    padding: 10px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.incomplete{
+    background-color: rgb(243, 106, 106);
+    margin: 5px 0;
+    padding: 3px;
     border-radius: 3px;
     display: flex;
     align-items: center;
