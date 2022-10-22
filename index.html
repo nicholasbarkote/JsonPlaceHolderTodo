@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="todoHead">
+        <input type="text" placeholder="Add Todo" />
+        <input type="image" src="images/add.svg" value="Add" />
+      </div>
+      <div class="todoBody">
+        <div class="completeHead">
+          <h3>Completed Todo</h3>
+          <hr class="line">
+          <div id="complete"></div>
+        </div>
+
+        <div class="incompleteHead">
+          <h3>Incomplete Todo</h3>
+          <hr class="line">
+          <div id="incomplete"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+    --primary:#371B58;
+    --secondary:#4C3575;
+    --tertiary:#5B4B8A;
+    --primary-light:#7858A6;
+}
+*{
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+}
+/* Content */
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Todo Add */
+.todoHead{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    width: 500px;
+}
+input[type=text]{
+    width: 70%;
+    padding: 10px;
+    border: 2px solid var(--secondary);
+    border-radius: 10px;
+}
+input[type=image]{
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+/* Task */
+
+.todoBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+/* Task Complete */
+.completeHead,.incompleteHead{
+    border: 1px solid var(--primary-light);
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+}
+.completeHead > h3 , .incompleteHead > h3 {
+    text-align: center;
+    color: var(--primary-light);
+}
+.line{
+    border: 2px solid var(--primary-light);
+}
+#complete{
+    background-color: rgba(229, 202, 202, 0.666);
+      
+    margin: 5px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
