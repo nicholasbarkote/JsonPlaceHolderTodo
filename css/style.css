@@ -1,84 +1,181 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-:root{
-    --primary:#371B58;
-    --secondary:#4C3575;
-    --tertiary:#5B4B8A;
-    --primary-light:#7858A6;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root {
+  --primary: #371b58;
+  --secondary: #4c3575;
+  --tertiary: #5b4b8a;
+  --primary-light: #7858a6;
 }
-*{
-    margin: 0;  
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: var(--primary);
-    font-family: 'Poppins', sans-serif;
+body {
+  background-color: var(--primary);
+  font-family: "Poppins", sans-serif;
 }
 /* Content */
-.content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Todo Add */
-.todoHead{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 20px;
-    width: 500px;
+.todoHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
 }
-input[type=text]{
-    width: 70%;
-    padding: 10px;
-    border: 2px solid var(--secondary);
-    border-radius: 10px;
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid var(--secondary);
+  border-radius: 10px;
 }
-input[type=image]{
-    margin: 10px;
-    width: 30px;
-    height: 30px;
+input[type="image"] {
+  position: absolute;
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  right: 250px;
+  top: 15px;
+  transition: 0.3s;
 }
 
 /* Task */
 
-.todoBody{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
+.todoBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 /* Task Complete */
-.completeHead,.incompleteHead{
-    border: 1px solid var(--primary-light);
-    width: 400px;
-    height: 500px;
-    border-radius: 10px;
+.completeHead,
+.incompleteHead {
+  border: 1px solid var(--primary-light);
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
 }
-.completeHead > h3 , .incompleteHead > h3 {
-    text-align: center;
-    color: var(--primary-light);
+.completeHead > h3,
+.incompleteHead > h3 {
+  text-align: center;
+  color: var(--primary-light);
 }
-.line{
-    border: 2px solid var(--primary-light);
+.line {
+  border: 2px solid var(--primary-light);
 }
-.complete{
-    background-color: greenyellow;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 3px;
+.complete {
+  background-color: greenyellow;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.incomplete {
+  background-color: rgb(243, 106, 106);
+  margin: 5px 0;
+  padding: 3px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Loading */
+#loaderincomplete,
+#loadercomplete {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid var(--primary-light);
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+#incomplete,
+#complete {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .todoBody {
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: space-between;
-}
-.incomplete{
-    background-color: rgb(243, 106, 106);
-    margin: 5px 0;
-    padding: 3px;
-    border-radius: 3px;
+    
+  }
+  .content {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+  }
+  input[type="image"] {
+    position: absolute;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    right: 100px;
+    top: 15px;
+    transition: 0.3s;
+  }
 }
